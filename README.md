@@ -126,3 +126,10 @@ Authorization: Bearer {access_token}
 
 # Postman
 Vous pouvez trouver un fichier postman.json dans ce dépôt. Importez ce fichier dans Postman pour tester facilement les endpoints de l'API.
+# Base de donnée
+## Créer la Base de Données
+créer une base de données nommée task-manager dans phpMyAdmin
+## Exécuter les Migrations Artisan
+Utilisez la commande suivante pour exécuter les migrations :
+
+php artisan migrate
