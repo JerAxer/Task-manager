@@ -22,8 +22,9 @@ composer install
 
 3. Configurez l'environnement :
 
-Copiez le fichier .env.example et renommez-le en .env.
-Configurez les paramètres de la base de données et d'autres configurations dans le fichier .env.
+-Copiez le fichier .env.example et renommez-le en .env.
+-Configurez les paramètres de la base de données et d'autres configurations dans le fichier .env.
+
 dans le terminal :
 
 cp .env.example .env
@@ -42,6 +43,6 @@ php artisan migrate
 
 6. Lancez le serveur de développement :
 
-7. dans le terminal :
+dans le terminal :
 
 php artisan serve
