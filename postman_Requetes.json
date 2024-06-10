@@ -1,0 +1,185 @@
+{
+    "info": {
+      "name": "Task Manager API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Register",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"name\": \"John Doe\", \"email\": \"john@example.com\", \"password\": \"password123\", \"password_confirmation\": \"password123\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/register",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "register"]
+          }
+        }
+      },
+      {
+        "name": "Login",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"email\": \"john@example.com\", \"password\": \"password123\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "login"]
+          }
+        }
+      },
+      {
+        "name": "Create Task",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{access_token}}"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"title\": \"New Task\", \"description\": \"Task description\", \"status\": \"pending\", \"due_date\": \"2024-12-31\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/tasks",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "tasks"]
+          }
+        }
+      },
+      {
+        "name": "Get All Tasks",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{access_token}}"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8000/api/tasks",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "tasks"]
+          }
+        }
+      },
+      {
+        "name": "Get Task",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{access_token}}"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8000/api/tasks/{{task_id}}",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "tasks", "{{task_id}}"]
+          }
+        }
+      },
+      {
+        "name": "Update Task",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{access_token}}"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"title\": \"Updated Task\", \"description\": \"Updated description\", \"status\": \"completed\", \"due_date\": \"2024-12-31\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/tasks/{{task_id}}",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "tasks", "{{task_id}}"]
+          }
+        }
+      },
+      {
+        "name": "Delete Task",
+        "request": {
+          "method": "DELETE",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{access_token}}"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8000/api/tasks/{{task_id}}",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "tasks", "{{task_id}}"]
+          }
+        }
+      },
+      {
+        "name": "Get Deleted Tasks",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{access_token}}"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8000/api/deleted",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "tasks", "deleted"]
+          }
+        }
+      }
+    ]
+  }
+  
